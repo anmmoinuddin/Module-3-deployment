@@ -1,5 +1,5 @@
-# Use Node.js official image as base
-FROM node:14
+# Use Node.js LTS version
+FROM node:14-alpine
 
 # Set working directory
 WORKDIR /app
@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port that the app runs on
+# Expose port 3000 (Express default)
 EXPOSE 3000
 
 # Start the app
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
