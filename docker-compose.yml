@@ -6,8 +6,7 @@ services:
     container_name: express_app
     ports:
       - "3000:3000"    # Optional: expose for debugging
-    networks:
-      - app-network
+    
 
   nginx:
     image: nginx:latest
@@ -18,8 +17,4 @@ services:
       - ./nginx/default.conf:/etc/nginx/default.conf
     depends_on:
       - app
-    networks:
-      - app-network
-
-networks:
-  - app-network
+    
