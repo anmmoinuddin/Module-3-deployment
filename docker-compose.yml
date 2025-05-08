@@ -14,4 +14,4 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/default.conf
     depends_on:
-      - app
+      - app 
