@@ -1,7 +1,8 @@
  
 services:
   app:
-    build: .
+    build: 
+      context: .
     container_name: express_app
     ports:
       - "3000:3000"
@@ -12,7 +13,7 @@ services:
     image: nginx:latest
     container_name: nginx_server
     ports:
-      - "8081:8081"
+      - "8000:8000"
     volumes:
       - ./nginx.conf:/etc/nginx/default.conf
     depends_on:
