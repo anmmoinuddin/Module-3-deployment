@@ -1,5 +1,5 @@
-# Use Node.js LTS version
-FROM node:14-alpine
+# Use Node.js LTS image
+FROM node:14
 
 # Set working directory
 WORKDIR /app
@@ -10,11 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the app
 COPY . .
 
-# Expose port 3000 (Express default)
+# Expose port (assuming app listens on 3000)
 EXPOSE 3000
 
 # Start the app
-ENTRYPOINT [ "node" ] 
+CMD ["node", "app.js"] 
